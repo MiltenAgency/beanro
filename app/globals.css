@@ -1,0 +1,135 @@
+@import "tailwindcss";
+@import "./fonts.css";
+
+/* Palette lifted from the export's Framer design tokens (:root --token-*). */
+@theme {
+  /* Page ground is the fill of the export's background SVG; --color-sand is the
+     slightly deeper tone used for cards and inactive tabs. */
+  --color-page: #f9f0e1;
+  --color-sand: #f9eedc;
+  --color-cream: #fcf7ee;
+  --color-cream-soft: #f9f0e1;
+  --color-peach: #ffefd5;
+  --color-brown: #7d2c0f;
+  --color-brown-soft: #664237;
+  --color-rust: #af4f28;
+  --color-orange: #ff8342;
+  --color-yellow: #fed16a;
+  --color-forest: #485f4e;
+
+  --font-display: "Boldonse", sans-serif;
+  --font-title: "Bayon", sans-serif;
+  --font-body: "Manrope", sans-serif;
+  --font-alt: "Inter Tight", sans-serif;
+
+  --radius-card: 24px;
+  --radius-panel: 32px;
+  --radius-block: 60px;
+}
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-page);
+    color: var(--color-brown);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: var(--color-orange);
+    color: var(--color-brown);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+    font-weight: 400;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+@layer components {
+  /* Display type — Boldonse, tight tracking, always uppercase in this template. */
+  .t-display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    line-height: 1.5;
+  }
+
+  /* Card and label type — Bayon, the condensed face. */
+  .t-title {
+    font-family: var(--font-title);
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: 1.1;
+  }
+
+  /* Small uppercase eyebrows and nav items. */
+  .t-eyebrow {
+    font-family: var(--font-body);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+/*
+ * The faint vertical rules behind every section. The export ships them inside
+ * one page-tall background SVG: 1.5px strokes at 10% opacity, 260px apart,
+ * with the middle rule landing on the page centre (x = 719.25 of 1440).
+ * Anchoring the repeat at 50% reproduces those exact positions at any width.
+ */
+.grid-lines {
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(175, 79, 40, 0.1) 0 1.5px,
+    transparent 1.5px 260px
+  );
+  background-position-x: calc(50% - 0.75px);
+}
+
+/* Marquee for the footer ticker band — two identical runs, shifted by half. */
+@keyframes beanro-ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Lenis recommended styles */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
