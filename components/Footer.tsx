@@ -17,11 +17,11 @@ export function Footer() {
           <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
             <Link href="/">
               <Image
-                src={site.logo}
+                src="/komorebi-white.svg"
                 alt={site.name}
-                width={171}
-                height={32}
-                className="h-8 w-auto brightness-0 invert"
+                width={250}
+                height={40}
+                className="h-9 w-auto"
               />
             </Link>
             <h4 className="t-title max-w-[380px] text-[32px] leading-[35.2px] tracking-[-1px] lg:text-right">

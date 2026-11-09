@@ -83,14 +83,14 @@ export function StaggeredColumnsPreloader({
                 >
                   {/* White Brand Logo attached to the middle column */}
                   {isMiddle && (
-                    <div className="flex flex-col items-center justify-center text-center px-2 w-full max-w-[280px]">
+                    <div className="flex flex-col items-center justify-center text-center px-2 w-full max-w-[320px]">
                       <Image
                         src="/komorebi-white.svg"
                         alt="Komorebi Teahouse"
-                        width={500}
-                        height={320}
+                        width={250}
+                        height={40}
                         priority
-                        className="w-28 sm:w-40 md:w-52 h-auto max-w-[85%] object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                        className="w-48 sm:w-60 md:w-72 h-auto max-w-[95%] object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.35)]"
                       />
                     </div>
                   )}

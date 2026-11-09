@@ -35,8 +35,8 @@ export function Navbar() {
             <Image
               src={site.logo}
               alt={site.name}
-              width={220}
-              height={36}
+              width={250}
+              height={40}
               className="h-9 w-auto"
               priority
             />
