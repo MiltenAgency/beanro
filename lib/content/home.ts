@@ -2,8 +2,8 @@
 
 export const hero = {
   lines: ["Mindful Moments", "Whisked To Life"],
-  splash: { src: "/assets/img/546acdf3090be173.webp", alt: "Vibrant botanical swirl" },
-  cup: { src: "/assets/img/95bd23851b4c364f.webp", alt: "Chilled ceremonial matcha latte with bamboo straw" },
+  splash: { src: "/assets/img/matcha/matcha-splash.png", alt: "Vibrant ceremonial green matcha liquid splash" },
+  cup: { src: "/assets/img/matcha/matcha-latte-glass.png", alt: "Chilled ceremonial matcha latte with bamboo straw" },
 };
 
 /**
@@ -16,15 +16,15 @@ export const statement = {
     { type: "text" as const, value: "At Komorebi, we believe tea" },
     {
       type: "image" as const,
-      src: "/assets/img/95bd23851b4c364f.webp",
+      src: "/assets/img/matcha/hero-iced-matcha.png",
       alt: "Chilled ceremonial matcha latte with bamboo straw",
       shape: "pill" as const,
     },
     { type: "text" as const, value: "is more than a drink — it’s a sacred ritual. Sourcing" },
     {
       type: "image" as const,
-      src: "/assets/img/tea-leaf.svg",
-      alt: "Single whole tea leaf bud",
+      src: "/assets/img/matcha/chawan-bowl.png",
+      alt: "Freshly whisked ceremonial matcha bowl",
       shape: "round" as const,
     },
     { type: "text" as const, value: "first-harvest tencha from Uji to honoring every whisk" },

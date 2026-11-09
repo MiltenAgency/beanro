@@ -27,13 +27,13 @@ export function DrinkCard({ drink }: { drink: Drink }) {
       </div>
 
       {/* 352px tall in the original, which is what makes the card 539 overall. */}
-      <div className="relative my-4 h-[300px] w-full lg:h-[352px]">
+      <div className="relative my-4 h-[300px] w-full overflow-hidden rounded-[20px] lg:h-[352px]">
         <Image
           src={drink.image}
           alt={drink.alt}
           fill
           sizes="(min-width: 1024px) 336px, 60vw"
-          className="object-contain hue-rotate-[95deg] saturate-110 transition-transform duration-300 hover:scale-105"
+          className="object-cover transition-transform duration-500 hover:scale-105"
         />
       </div>
 

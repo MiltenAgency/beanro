@@ -38,14 +38,14 @@ export function ClosingCta() {
             {...drink("left")}
             viewport={viewportOnce}
             transition={spring}
-            className="pointer-events-none absolute top-[9px] left-[57px] hidden w-[273px] lg:block"
+            className="pointer-events-none absolute top-[9px] left-[57px] hidden w-[240px] overflow-hidden rounded-[28px] shadow-xl ring-1 ring-brown/10 lg:block"
           >
             <Image
               src={closingCta.leftImage.src}
               alt={closingCta.leftImage.alt}
               width={460}
               height={720}
-              className="h-auto w-full hue-rotate-[95deg] saturate-110"
+              className="h-auto w-full object-cover"
             />
           </motion.div>
 
@@ -53,14 +53,14 @@ export function ClosingCta() {
             {...drink("right")}
             viewport={viewportOnce}
             transition={spring}
-            className="pointer-events-none absolute top-[12px] right-[72px] hidden w-[248px] lg:block"
+            className="pointer-events-none absolute top-[12px] right-[72px] hidden w-[240px] overflow-hidden rounded-[28px] shadow-xl ring-1 ring-brown/10 lg:block"
           >
             <Image
               src={closingCta.rightImage.src}
               alt={closingCta.rightImage.alt}
               width={460}
               height={720}
-              className="h-auto w-full hue-rotate-[95deg] saturate-110"
+              className="h-auto w-full object-cover"
             />
           </motion.div>
 

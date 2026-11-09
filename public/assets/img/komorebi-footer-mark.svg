@@ -1,4 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2640" height="284" viewBox="0 0 2640 284" fill="none">
-  <text x="50%" y="240" text-anchor="middle" font-family="'Bayon', 'Boldonse', -apple-system, sans-serif" font-size="280" font-weight="900" letter-spacing="-0.02em" fill="#EDE8DC" opacity="0.16">KOMOREBI TEAHOUSE</text>
+  <style>
+    @font-face {
+      font-family: 'Funky Bird';
+      src: url('/assets/fonts/FunkyBird.otf') format('opentype');
+    }
+  </style>
+  <text x="50%" y="220" text-anchor="middle" font-family="'Funky Bird', 'Boldonse', -apple-system, sans-serif" font-size="240" font-weight="700" letter-spacing="0.04em" fill="#EDE8DC" opacity="0.18">KOMOREBI TEAHOUSE</text>
 </svg>
-

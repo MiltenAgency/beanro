@@ -37,10 +37,7 @@ export function Statement() {
                     alt={token.alt}
                     width={token.shape === "pill" ? 320 : 380}
                     height={token.shape === "pill" ? 488 : 294}
-                    className={clsx(
-                      "h-full w-full object-contain",
-                      token.shape === "pill" && "hue-rotate-[95deg] saturate-110",
-                    )}
+                    className="h-full w-full object-cover"
                   />
                 </span>
               ),

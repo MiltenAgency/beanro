@@ -52,7 +52,7 @@ export function Hero() {
               width={1920}
               height={803}
               priority
-              className="h-auto w-full hue-rotate-[105deg] saturate-110"
+              className="h-auto w-full object-contain"
             />
           </motion.div>
 
@@ -65,15 +65,15 @@ export function Hero() {
             <motion.div
               animate={reduced ? undefined : { y: [0, -14, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="w-[30%] lg:w-[25.3%]"
+              className="w-[28%] overflow-hidden rounded-[28px] shadow-2xl ring-1 ring-brown/10 lg:w-[23%] lg:rounded-[44px]"
             >
               <Image
                 src={hero.cup.src}
                 alt={hero.cup.alt}
-                width={320}
-                height={488}
+                width={440}
+                height={910}
                 priority
-                className="h-auto w-full hue-rotate-[95deg] saturate-110"
+                className="h-auto w-full object-cover"
               />
             </motion.div>
           </motion.div>

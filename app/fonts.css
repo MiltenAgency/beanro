@@ -1,3 +1,12 @@
+/* Funky Bird — Custom Brand Display Font */
+@font-face {
+  font-family: 'Funky Bird';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('/assets/fonts/FunkyBird.otf') format('opentype');
+}
+
 /* Bayon — latin */
 @font-face {
   font-family: 'Bayon';

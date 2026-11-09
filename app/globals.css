@@ -15,8 +15,8 @@
   --color-yellow: #eec585;
   --color-forest: #172a08;
 
-  --font-display: "Boldonse", sans-serif;
-  --font-title: "Bayon", sans-serif;
+  --font-display: "Funky Bird", "Boldonse", sans-serif;
+  --font-title: "Funky Bird", "Bayon", sans-serif;
   --font-body: "Manrope", sans-serif;
   --font-alt: "Inter Tight", sans-serif;
 
@@ -57,20 +57,21 @@
 
 @layer components {
   /* Display type — Boldonse, tight tracking, always uppercase in this template. */
+  /* Display type — Funky Bird, expressive organic curves */
   .t-display {
     font-family: var(--font-display);
     font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: -0.04em;
-    line-height: 1.5;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
   }
 
-  /* Card and label type — Bayon, the condensed face. */
+  /* Card and label type — Funky Bird / Bayon */
   .t-title {
     font-family: var(--font-title);
     font-weight: 400;
-    letter-spacing: -1px;
-    line-height: 1.1;
+    letter-spacing: -0.5px;
+    line-height: 1.15;
   }
 
   /* Small uppercase eyebrows and nav items. */
