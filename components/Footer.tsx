@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { footer, footerMark, site } from "@/lib/content/site";
+import { footer, site } from "@/lib/content/site";
 import { Ticker } from "@/components/Ticker";
 import { BackToTop } from "@/components/BackToTop";
 
@@ -96,16 +96,30 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Oversized wordmark the original parks at the very bottom, clipped by
-            the page edge. */}
-        <div className="mx-auto max-w-[1440px] px-6 lg:px-[60px]">
-          <Image
-            src={footerMark}
-            alt={footer.logoAlt}
-            width={2640}
-            height={284}
-            className="h-auto w-full"
-          />
+        {/* Oversized brand wordmark */}
+        <div className="mx-auto max-w-[1440px] px-6 pb-6 pt-10 sm:pb-8 sm:pt-14 lg:px-[60px] lg:pb-12 lg:pt-16">
+          <svg
+            viewBox="0 0 2800 340"
+            className="h-auto w-full select-none"
+            aria-label={footer.logoAlt}
+            role="img"
+          >
+            <text
+              x="50%"
+              y="240"
+              textAnchor="middle"
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "270px",
+                fontWeight: 700,
+                letterSpacing: "0.04em",
+                fill: "#FFFFFF",
+                opacity: 0.7,
+              }}
+            >
+              KOMOREBI TEAHOUSE
+            </text>
+          </svg>
         </div>
       </div>
     </footer>
