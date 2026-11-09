@@ -58,10 +58,10 @@ export const stirBlock = {
   body: "Crafted to awaken clarity, quiet the noise, and turn each daily pause into an intentional moment of serene beauty.",
   /** Percentages measured off the original's 1320×913 panel. */
   tags: [
-    { label: "First-Harvest Uji", tone: "yellow" as const, rotate: -5, top: "5.8%", left: "46%" },
-    { label: "Stone-Ground", tone: "forest" as const, rotate: -8, top: "45.6%", left: "10.7%" },
-    { label: "Deep Umami", tone: "orange" as const, rotate: 8, top: "44.5%", left: "76%" },
-    { label: "Ceremonial Grade", tone: "peach" as const, rotate: -6, top: "69%", left: "44.5%" },
+    { label: "Daily Matcha Ritual", tone: "yellow" as const, rotate: -5, top: "5.8%", left: "46%" },
+    { label: "Single-Estate Uji", tone: "forest" as const, rotate: -8, top: "45.6%", left: "10.7%" },
+    { label: "Ceremonial Grade", tone: "orange" as const, rotate: 8, top: "44.5%", left: "76%" },
+    { label: "Mindful Living", tone: "peach" as const, rotate: -6, top: "69%", left: "44.5%" },
   ],
 };
 
