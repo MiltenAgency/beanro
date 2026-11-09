@@ -8,8 +8,8 @@ import { ClosingCta } from "@/components/ClosingCta";
 import { Reveal } from "@/components/motions/Reveal";
 
 export const metadata: Metadata = {
-  title: "Menu",
-  description: "Signature brews, cold brews and frappuccinos from Beanro.",
+  title: "Offerings",
+  description: "Ceremonial matchas, cold-drip infusions and roasted hojicha from Komorebi Teahouse.",
 };
 
 export default function MenuPage() {

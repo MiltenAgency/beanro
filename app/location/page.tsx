@@ -8,8 +8,8 @@ import { ClosingCta } from "@/components/ClosingCta";
 import { Reveal } from "@/components/motions/Reveal";
 
 export const metadata: Metadata = {
-  title: "Location",
-  description: "Visit Beanro in Los Angeles, New York and Santa Monica.",
+  title: "Sanctuaries",
+  description: "Visit Komorebi Teahouse in Kyoto, Los Angeles and New York.",
 };
 
 function Stars() {

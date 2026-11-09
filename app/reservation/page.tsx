@@ -5,8 +5,8 @@ import { PageHero } from "@/components/PageHero";
 import { BookingForm } from "@/components/BookingForm";
 
 export const metadata: Metadata = {
-  title: "Reservation",
-  description: "Reserve a table at Beanro.",
+  title: "Tea Seating & Reservation",
+  description: "Reserve a tatami table or private tea ceremony at Komorebi Teahouse.",
 };
 
 export default function ReservationPage() {

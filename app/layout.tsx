@@ -9,7 +9,7 @@ import { LenisProvider } from "@/components/LenisProvider";
 export const metadata: Metadata = {
   title: { default: site.title, template: `%s — ${site.name}` },
   description: site.description,
-  icons: { icon: site.logo },
+  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg", apple: "/favicon.svg" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

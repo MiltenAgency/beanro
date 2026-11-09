@@ -8,14 +8,14 @@ import { ClosingCta } from "@/components/ClosingCta";
 import { Reveal } from "@/components/motions/Reveal";
 
 export const metadata: Metadata = {
-  title: "Blog",
-  description: "Stories and coffee culture from Beanro.",
+  title: "Tea Journal",
+  description: "Stories, craft and Japanese tea culture from Komorebi Teahouse.",
 };
 
 export default function BlogPage() {
   return (
     <>
-      <PageHero eyebrow="blogs and news" lines={["Stories And Coffee", "Culture From Beanro"]} />
+      <PageHero eyebrow="Tea Chronicles & News" lines={["Essays On Japanese", "Tea & Mindful Living"]} />
 
       <section className="grid-lines bg-page pb-20 lg:pb-28">
         <ul className="mx-auto grid max-w-[1440px] gap-8 px-6 sm:grid-cols-2 lg:grid-cols-3 lg:px-[60px]">

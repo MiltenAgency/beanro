@@ -33,7 +33,7 @@ export function DrinkCard({ drink }: { drink: Drink }) {
           alt={drink.alt}
           fill
           sizes="(min-width: 1024px) 336px, 60vw"
-          className="object-contain"
+          className="object-contain hue-rotate-[95deg] saturate-110 transition-transform duration-300 hover:scale-105"
         />
       </div>
 

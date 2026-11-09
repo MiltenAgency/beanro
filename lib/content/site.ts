@@ -1,77 +1,83 @@
 /** Site-wide chrome: announcement bar, nav, ticker, footer, closing CTA. */
 
 export const site = {
-  name: "Beanro",
-  title: "Beanro — Coffee Shop Template",
+  name: "Komorebi",
+  title: "Komorebi Teahouse — Artisan Japanese Tea & Ceremonial Matcha",
   description:
-    "Beanro is a modern coffee shop Framer template crafted for cafés, roasteries, and specialty coffee brands. Showcase your menu, locations, blog, and reservations with a clean design, smooth experience, and fully responsive layout.",
-  logo: "/assets/img/8c1303806b4712d5.svg",
-  bean: "/assets/img/d42ca86d7a9257da.webp",
+    "An artisan Japanese tea lounge and ceremonial matcha sanctuary showcasing first-harvest Uji tencha, traditional bamboo chasen whisking, and tranquil tatami tea pavilions.",
+  logo: "/assets/img/komorebi-logo.svg",
+  bean: "/assets/img/tea-leaf.svg",
 };
 
 export const announcement = {
-  text: "Experience the perfect balance of flavor, warmth, and comfort in every sip —",
-  linkLabel: "Explore Our Menu",
+  text: "First-harvest spring Uji tencha has arrived at all tea sanctuaries —",
+  linkLabel: "Explore The Tea Menu",
   linkHref: "/menu",
 };
 
 export const nav = {
   links: [
     { label: "About", href: "/about" },
-    { label: "Blog", href: "/blog" },
+    { label: "Tea Journal", href: "/blog" },
     { label: "Menu", href: "/menu" },
   ],
-  cta: { label: "Order Now", href: "/reservation" },
+  cta: { label: "Reserve Table", href: "/reservation" },
 };
 
 export const ticker = {
-  words: ["Brew Bold", "Chill Smooth", "Crafted Cold", "Sip Slow"],
+  words: [
+    "Ceremonial Matcha",
+    "Hand-Whisked Daily",
+    "First-Harvest Uji",
+    "Slow-Drip Gyokuro",
+    "Tranquil Stillness",
+  ],
 };
 
 export const closingCta = {
-  lines: ["Make Your Coffee", "Moment special"],
-  body: "Every day deserves a better cup of coffee — one that feels refreshing, indulgent, and made with intention.",
-  cta: { label: "Order Now", href: "/reservation" },
+  lines: ["Find Stillness In", "Every Whisked Bowl"],
+  body: "Every day deserves a quiet pause — an invitation to slow down, breathe, and experience ceremonial Japanese tea prepared with profound mindfulness.",
+  cta: { label: "Reserve A Tatami Table", href: "/reservation" },
   leftImage: {
     src: "/assets/img/888c98470444b130.webp",
-    alt: "Iced caramel coffee with cream",
+    alt: "Chilled iced matcha latte with organic cream",
   },
   rightImage: {
     src: "/assets/img/2bca6252debadb19.webp",
-    alt: "Frappe topped with whipped cream",
+    alt: "Handcrafted ceremonial matcha float",
   },
 };
 
 /** Oversized wordmark that closes the page. */
-export const footerMark = "/assets/img/55bf36b11c0a85a5.webp";
+export const footerMark = "/assets/img/komorebi-footer-mark.svg";
 
 export const footer = {
-  tagline: "Make every coffee moment feel intentional",
-  logoAlt: "Beanro CAFF",
+  tagline: "Honoring the tranquil ritual of Japanese tea in every bowl",
+  logoAlt: "Komorebi Teahouse",
   columns: {
     pages: [
       { label: "About", href: "/about" },
-      { label: "Blog", href: "/blog" },
+      { label: "Tea Journal", href: "/blog" },
       { label: "Menu", href: "/menu" },
-      { label: "Location", href: "/location" },
+      { label: "Sanctuaries", href: "/location" },
       { label: "Reservation", href: "/reservation" },
       { label: "404", href: "/404" },
     ],
     contact: {
-      heading: "Contact",
-      email: "hello@beanro.com",
-      phone: "+880 1234 567 890",
-      placeName: "Beanro Coffee",
-      address: ["1258 Melrose Ave Los", "Angeles, CA 90046", "United States"],
+      heading: "Sanctuary Inquiries",
+      email: "sanctuary@komorebitea.com",
+      phone: "+1 (310) 844-9271",
+      placeName: "Komorebi Kyoto Sanctuary",
+      address: ["82 Yasaka-dori, Higashiyama-ku", "Kyoto 605-0862", "Japan"],
     },
     social: [
       { label: "Instagram", href: "https://instagram.com" },
-      { label: "Facebook", href: "https://facebook.com" },
+      { label: "Substack", href: "https://substack.com" },
       { label: "Twitter", href: "https://twitter.com" },
       { label: "Pinterest", href: "https://pinterest.com" },
     ],
   },
-  copyright: "© 2026 Beanro. All rights reserved.",
+  copyright: "© 2026 Komorebi Teahouse. All rights reserved.",
   privacy: { label: "Privacy Policy", href: "/legal-page/privacy-policy" },
-  backToTop: "Back to top",
+  backToTop: "Return to Top",
 };

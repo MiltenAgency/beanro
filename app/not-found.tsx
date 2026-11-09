@@ -8,9 +8,9 @@ export default function NotFound() {
           404
         </h1>
         <p className="mt-6 font-body text-[18px] leading-[27px] text-rust">
-          That page has gone cold. Let’s get you back to something freshly brewed.
+          That page has drifted like morning mist. Let’s guide you back to the tea sanctuary.
         </p>
-        <PillButton href="/" label="Back to home" className="mt-10" />
+        <PillButton href="/" label="Return to Sanctuary" className="mt-10" />
       </div>
     </section>
   );

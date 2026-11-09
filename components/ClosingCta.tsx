@@ -45,7 +45,7 @@ export function ClosingCta() {
               alt={closingCta.leftImage.alt}
               width={460}
               height={720}
-              className="h-auto w-full"
+              className="h-auto w-full hue-rotate-[95deg] saturate-110"
             />
           </motion.div>
 
@@ -60,7 +60,7 @@ export function ClosingCta() {
               alt={closingCta.rightImage.alt}
               width={460}
               height={720}
-              className="h-auto w-full"
+              className="h-auto w-full hue-rotate-[95deg] saturate-110"
             />
           </motion.div>
 

@@ -52,7 +52,7 @@ export function Hero() {
               width={1920}
               height={803}
               priority
-              className="h-auto w-full"
+              className="h-auto w-full hue-rotate-[105deg] saturate-110"
             />
           </motion.div>
 
@@ -73,7 +73,7 @@ export function Hero() {
                 width={320}
                 height={488}
                 priority
-                className="h-auto w-full"
+                className="h-auto w-full hue-rotate-[95deg] saturate-110"
               />
             </motion.div>
           </motion.div>

@@ -1,21 +1,19 @@
 @import "tailwindcss";
 @import "./fonts.css";
 
-/* Palette lifted from the export's Framer design tokens (:root --token-*). */
+/* Komorebi Teahouse Design Tokens — Inspired by Mori Matcha Palette */
 @theme {
-  /* Page ground is the fill of the export's background SVG; --color-sand is the
-     slightly deeper tone used for cards and inactive tabs. */
-  --color-page: #f9f0e1;
-  --color-sand: #f9eedc;
-  --color-cream: #fcf7ee;
-  --color-cream-soft: #f9f0e1;
-  --color-peach: #ffefd5;
-  --color-brown: #7d2c0f;
-  --color-brown-soft: #664237;
-  --color-rust: #af4f28;
-  --color-orange: #ff8342;
-  --color-yellow: #fed16a;
-  --color-forest: #485f4e;
+  --color-page: #f5fbed;
+  --color-sand: #eafbcf;
+  --color-cream: #f9fdf5;
+  --color-cream-soft: #edf8e4;
+  --color-peach: #e7dfd1;
+  --color-brown: #23410b;
+  --color-brown-soft: #325814;
+  --color-rust: #3e2a1e;
+  --color-orange: #3a6919;
+  --color-yellow: #eec585;
+  --color-forest: #172a08;
 
   --font-display: "Boldonse", sans-serif;
   --font-title: "Bayon", sans-serif;
@@ -41,7 +39,7 @@
 
   ::selection {
     background: var(--color-orange);
-    color: var(--color-brown);
+    color: #ffffff;
   }
 
   h1,
@@ -94,7 +92,7 @@
 .grid-lines {
   background-image: repeating-linear-gradient(
     to right,
-    rgba(175, 79, 40, 0.1) 0 1.5px,
+    rgba(35, 65, 11, 0.07) 0 1.5px,
     transparent 1.5px 260px
   );
   background-position-x: calc(50% - 0.75px);

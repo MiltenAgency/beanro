@@ -1,9 +1,9 @@
-/** Home page copy and imagery, mined verbatim from the export. */
+/** Home page copy and imagery for Komorebi Teahouse. */
 
 export const hero = {
-  lines: ["freshly Brewed", "Moments Start Here"],
-  splash: { src: "/assets/img/546acdf3090be173.webp", alt: "Dynamic brown liquid splash" },
-  cup: { src: "/assets/img/95bd23851b4c364f.webp", alt: "Iced latte with bamboo straw" },
+  lines: ["Mindful Moments", "Whisked To Life"],
+  splash: { src: "/assets/img/546acdf3090be173.webp", alt: "Vibrant botanical swirl" },
+  cup: { src: "/assets/img/95bd23851b4c364f.webp", alt: "Chilled ceremonial matcha latte with bamboo straw" },
 };
 
 /**
@@ -11,84 +11,84 @@ export const hero = {
  * stored as an ordered run of text and image tokens rather than a string.
  */
 export const statement = {
-  eyebrow: "about beanro",
+  eyebrow: "the art of komorebi",
   run: [
-    { type: "text" as const, value: "At Beanro, we believe coffee" },
+    { type: "text" as const, value: "At Komorebi, we believe tea" },
     {
       type: "image" as const,
       src: "/assets/img/95bd23851b4c364f.webp",
-      alt: "Iced latte with bamboo straw",
+      alt: "Chilled ceremonial matcha latte with bamboo straw",
       shape: "pill" as const,
     },
-    { type: "text" as const, value: "is more than a drink — it’s an experience. sourcing" },
+    { type: "text" as const, value: "is more than a drink — it’s a sacred ritual. Sourcing" },
     {
       type: "image" as const,
-      src: "/assets/img/0798aab18aa2680b.webp",
-      alt: "Single roasted coffee bean",
+      src: "/assets/img/tea-leaf.svg",
+      alt: "Single whole tea leaf bud",
       shape: "round" as const,
     },
-    { type: "text" as const, value: "premium beans to perfecting each brew" },
+    { type: "text" as const, value: "first-harvest tencha from Uji to honoring every whisk" },
   ],
 };
 
 export const brewsSection = {
-  lines: ["Explore Our", "Signature Brews"],
-  blurb: "A selection of favorites crafted to delight every coffee lover.",
+  lines: ["Explore Our", "Artisan Tea Offerings"],
+  blurb: "Hand-whisked ceremonial matchas, cold-drip infusions, and slow-roasted hojicha.",
 };
 
 export const standard = {
-  lines: ["A New Standard For", "premium Coffee"],
-  leftLabel: ["Smooth", "cold brew"],
-  rightLabel: ["Balanced", "sweetness"],
+  lines: ["A Sacred Standard For", "Ceremonial Matcha"],
+  leftLabel: ["Shade-Grown", "First Harvest"],
+  rightLabel: ["Stone-Ground", "Pure Umami"],
   video: "/assets/video/v4aErQGkJo2Q26RGPB8Mac4c.mp4",
-  body: "At Beanro, cold coffee is more than just iced espresso — it’s a carefully layered experience. From slow-brewed coffee bases to rich cream finishes, every element is designed to create balance, depth, and smoothness in every cup.",
+  body: "At Komorebi, matcha is never hurried. Shade-grown under traditional straw reed canopies for twenty-one days in Uji, each tender leaf develops deep chlorophyll, soothing theanine, and profound umami before being slowly stone-ground into vibrant emerald silk.",
 };
 
-/** The brown panel: stacked headline with a word that swaps, plus floating pills. */
+/** The dark matcha panel: stacked headline with a word that swaps, plus floating pills. */
 export const stirBlock = {
-  lineOne: "STIR UP YOUR DAILY",
-  lineTwo: "ROUTINE AND",
+  lineOne: "FIND STILLNESS IN YOUR",
+  lineTwo: "DAILY RITUAL AND",
   /** These two alternate in place; the original renders them in different faces. */
   swap: [
-    { text: "CHILL UP", font: "display" as const },
-    { text: "LIGHT UP", font: "alt" as const },
+    { text: "SLOW DOWN", font: "display" as const },
+    { text: "WAKE UP", font: "alt" as const },
   ],
-  lineThree: "WITH EVERY SIP OF RICH,",
-  lineFour: "CREAMY COFFEE",
-  body: "Designed to refresh your mood, elevate your taste, and turn every coffee break into something worth remembering.",
+  lineThree: "WITH EVERY BOWL OF PURE,",
+  lineFour: "CEREMONIAL MATCHA",
+  body: "Crafted to awaken clarity, quiet the noise, and turn each daily pause into an intentional moment of serene beauty.",
   /** Percentages measured off the original's 1320×913 panel. */
   tags: [
-    { label: "Bold Flavor", tone: "yellow" as const, rotate: -5, top: "5.8%", left: "46%" },
-    { label: "Premium Beans", tone: "forest" as const, rotate: -8, top: "45.6%", left: "10.7%" },
-    { label: "Creamy Texture", tone: "orange" as const, rotate: 8, top: "44.5%", left: "76%" },
-    { label: "Freshly Roasted", tone: "peach" as const, rotate: -6, top: "69%", left: "44.5%" },
+    { label: "First-Harvest Uji", tone: "yellow" as const, rotate: -5, top: "5.8%", left: "46%" },
+    { label: "Stone-Ground", tone: "forest" as const, rotate: -8, top: "45.6%", left: "10.7%" },
+    { label: "Deep Umami", tone: "orange" as const, rotate: 8, top: "44.5%", left: "76%" },
+    { label: "Ceremonial Grade", tone: "peach" as const, rotate: -6, top: "69%", left: "44.5%" },
   ],
 };
 
 export const features = [
   {
     number: "01",
-    title: ["Quality Without", "Compromise"],
-    body: "We carefully select our beans and refine every step of the process to ensure each cup delivers.",
+    title: ["First-Harvest", "Uji Tencha"],
+    body: "We source exclusively from heritage micro-estates across the mist-shrouded hills of Kyoto, selecting pristine spring tea buds.",
   },
   {
     number: "02",
-    title: ["Craft In", "Every Detail"],
-    body: "From slow brewing to creamy finishes, we focus on precision and care to create coffee that feels rich.",
+    title: ["Takayama Bamboo", "Chasen Craft"],
+    body: "Every ceremonial bowl is hand-whisked to order with 80-prong bamboo whisks, producing an airy, emerald micro-foam.",
   },
   {
     number: "03",
-    title: ["All the Moments", "That Matter"],
-    body: "Beanro is more than coffee — it’s about creating space to pause, connect, and enjoy moments in your day.",
+    title: ["Sanctuaries of", "Calm & Presence"],
+    body: "Komorebi teahouses are tranquil architecture of cedar, washi paper, and tatami, inviting you to disconnect and savor peace.",
   },
 ];
 
 export const aboutTeaser = {
   image: {
     src: "/assets/img/cd8a32f6a33d8d2c.webp",
-    alt: "Modern industrial cafe interior design",
+    alt: "Minimalist Japanese tatami tea sanctuary interior",
   },
-  lines: ["Crafted For Your", "Perfect Coffee", "Moment with us"],
-  body: "At Beanro, every cup is thoughtfully crafted to deliver more than just coffee. We combine slow-brewed richness with velvety cream to create a balanced, refreshing experience.",
-  cta: { label: "Learn more about us", href: "/about" },
+  lines: ["Crafted For Your", "Serene Tea", "Ritual with us"],
+  body: "At Komorebi, every bowl is thoughtfully prepared to deliver more than refreshment. We harmonize century-old tea philosophy with contemporary comfort to create a grounded, contemplative experience.",
+  cta: { label: "Learn more about our heritage", href: "/about" },
 };

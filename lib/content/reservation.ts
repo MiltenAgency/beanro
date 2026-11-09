@@ -1,29 +1,27 @@
 /** Reservation page and its booking form. */
 
 export const reservationHero = {
-  eyebrow: "reservation",
-  lines: ["Reserve Your", "Coffee Moment"],
+  eyebrow: "Tea Ceremony & Seating",
+  lines: ["Reserve Your", "Tranquil Moment"],
 };
 
 export const bookingForm = {
-  heading: "Book Your Table",
-  submitLabel: "Book a table now",
+  heading: "Reserve A Tatami Table",
+  submitLabel: "Confirm Reservation",
   fields: {
     name: "Full Name",
     email: "Email Address",
     phone: "Phone Number",
-    /**
-     * The export labels this control "Services *" but gives it the placeholder
-     * "Select Location" and four dental-practice options left over from the
-     * template it was branched from. Relabelled and repointed at the three
-     * cafés — see PRODUCT.md → Deviations.
-     */
-    location: "Location *",
-    locationPlaceholder: "Select Location",
+    location: "Sanctuary Location *",
+    locationPlaceholder: "Select Sanctuary",
     date: "Date",
-    time: "Time",
-    message: "Your Message",
+    time: "Preferred Time",
+    message: "Special Requests (Tea Ceremony Flight, Wagashi Pairing)",
   },
-  locations: ["Beanro Melrose, LA", "Pasta Pronto, Ny", "Beanro Santa Monica"],
-  successMessage: "Thanks — we’ll confirm your table by email shortly.",
+  locations: [
+    "Kyoto Sanctuary (Higashiyama)",
+    "Venice Pavilion (Los Angeles)",
+    "SoHo Tea Cellar (New York)",
+  ],
+  successMessage: "Arigato — we have reserved your tea seating and will confirm by email shortly.",
 };

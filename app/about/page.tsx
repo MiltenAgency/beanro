@@ -11,7 +11,7 @@ import { ClosingCta } from "@/components/ClosingCta";
 import { Reveal } from "@/components/motions/Reveal";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Our Heritage",
   description: aboutHero.body,
 };
 
