@@ -6,58 +6,18 @@ import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import clsx from "clsx";
 
-import { announcement, nav, site } from "@/lib/content/site";
+import { nav, site } from "@/lib/content/site";
 import { spring } from "@/lib/motion";
 import { PillButton } from "@/components/Buttons";
 
-/** Static header — the original's nav scrolls away with the page. */
 export function Navbar() {
-  const [barOpen, setBarOpen] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const reduced = useReducedMotion();
 
   return (
     <header className="relative z-50">
-      <AnimatePresence initial={false}>
-        {barOpen && (
-          <motion.div
-            key="announcement"
-            initial={reduced ? false : { height: 0 }}
-            animate={{ height: "auto" }}
-            exit={reduced ? undefined : { height: 0 }}
-            transition={spring}
-            className="overflow-hidden bg-brown"
-          >
-            <div className="relative mx-auto flex max-w-[1440px] items-center justify-center px-12 py-2 lg:h-[47px] lg:py-0">
-              <p className="flex flex-wrap items-center justify-center gap-x-2 text-center font-body text-[12px] leading-[18px] font-medium tracking-[0.01em] text-peach uppercase sm:text-[15px] lg:leading-normal">
-                <Image src={site.bean} alt="" width={18} height={18} className="h-4 w-4 shrink-0" />
-                <span>{announcement.text}</span>
-                <Link href={announcement.linkHref} className="underline underline-offset-2">
-                  {announcement.linkLabel}
-                </Link>
-              </p>
-              <button
-                type="button"
-                onClick={() => setBarOpen(false)}
-                aria-label="Dismiss announcement"
-                className="absolute top-1/2 right-6 -translate-y-1/2 text-peach transition-opacity hover:opacity-70"
-              >
-                <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden>
-                  <path
-                    d="M3 3l10 10M13 3L3 13"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <nav className="bg-cream">
-        <div className="mx-auto flex h-[96px] max-w-[1440px] items-center justify-between px-6 lg:px-[60px]">
+      <nav className="bg-cream border-b border-brown/10">
+        <div className="mx-auto flex h-[88px] max-w-[1440px] items-center justify-between px-6 lg:px-[60px]">
           <ul className="hidden items-center gap-8 lg:flex">
             {nav.links.map((link) => (
               <li key={link.href}>
@@ -75,9 +35,9 @@ export function Navbar() {
             <Image
               src={site.logo}
               alt={site.name}
-              width={171}
-              height={32}
-              className="h-8 w-auto"
+              width={220}
+              height={36}
+              className="h-9 w-auto"
               priority
             />
           </Link>
@@ -119,14 +79,14 @@ export function Navbar() {
                     <Link
                       href={link.href}
                       onClick={() => setMenuOpen(false)}
-                      className="t-eyebrow text-rust"
+                      className="t-eyebrow block py-2 text-rust transition-colors hover:text-orange"
                     >
                       {link.label}
                     </Link>
                   </li>
                 ))}
-                <li>
-                  <PillButton href={nav.cta.href} label={nav.cta.label} className="w-full" />
+                <li className="pt-2">
+                  <PillButton href={nav.cta.href} label={nav.cta.label} />
                 </li>
               </ul>
             </motion.div>

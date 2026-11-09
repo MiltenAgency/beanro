@@ -1,29 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="250" height="40" viewBox="0 0 250 40" fill="none">
-  <!-- Inspired Japanese Tree Mark with Exactly 6 Leaves -->
-  <g transform="translate(4, 2)" id="six-leaf-tree-mark">
-    <!-- Rooted Trunk Base -->
-    <path d="M 14 36 C 14 30 16 23 18 16 C 20 23 22 30 22 36 C 26 36 30 36 32 36 C 27 35 22 33 19 30 C 17 28 17 22 18 16 C 19 22 19 28 17 30 C 14 33 9 35 4 36 C 6 36 10 36 14 36 Z" fill="#1B382B"/>
-    
-    <!-- Central Trunk Stem -->
-    <path d="M 16.5 18 C 16.5 12 19.5 12 19.5 18 C 19 24 17 24 16.5 18 Z" fill="#1B382B"/>
-
-    <!-- Leaf 1: Lower Left -->
-    <path d="M 16 26 C 9 26 3 29 2 34 C 8 33 14 30 16 26 Z" fill="#38A169"/>
-    
-    <!-- Leaf 2: Lower Right -->
-    <path d="M 20 26 C 27 26 33 29 34 34 C 28 33 22 30 20 26 Z" fill="#38A169"/>
-    
-    <!-- Leaf 3: Middle Left -->
-    <path d="M 16 18 C 7 17 3 21 2 25 C 4 19 10 15 16 17 Z" fill="#1B382B"/>
-    
-    <!-- Leaf 4: Middle Right -->
-    <path d="M 20 18 C 29 17 33 21 34 25 C 32 19 26 15 20 17 Z" fill="#1B382B"/>
-    
-    <!-- Leaf 5: Top Left -->
-    <path d="M 17 12 C 9 9 7 3 6 0 C 12 2 16 7 17 12 Z" fill="#38A169"/>
-    
-    <!-- Leaf 6: Top Right -->
-    <path d="M 19 12 C 27 9 29 3 30 0 C 24 2 20 7 19 12 Z" fill="#38A169"/>
+  <!-- Exact User-Provided Organic Botanical Tree Mark -->
+  <g transform="translate(4, 2) scale(0.2)" fill="#1B382B">
+    <path d="M74 122 C74 135 71 145 61 153 C70 150 74 145 76 138 C76 130 73 118 69 110 C62 101 48 99 43 95 C37 90 39 82 48 83 C60 83 70 92 73 103 C76 109 77 116 78 122 C79 114 81 106 84 98 C88 84 99 75 108 70 C107 77 103 86 96 92 C89 98 84 106 83 117 C83 126 85 137 85 144 C86 151 90 156 99 161 C88 158 82 152 82 147 C82 136 84 128 84 122 Z" />
+    <path d="M43 94 C34 94 37 84 46 83 C55 82 66 89 71 98 C72 101 73 104 74 107 C72 101 69 94 62 89 C55 84 46 83 43 94 Z" />
+    <path d="M78 108 C78 90 77 75 82 64 C84 74 83 91 82 108 Z" />
+    <path d="M41 55 C41 55 49 53 58 60 C66 67 65 74 62 74 C58 74 48 68 44 62 C41 59 41 55 41 55 Z" fill="#38A169" />
+    <path d="M40 92 C40 92 48 91 58 97 C67 103 66 110 63 110 C59 110 48 104 43 98 C40 95 40 92 40 92 Z" fill="#38A169" />
+    <path d="M80 34 C80 34 89 39 91 53 C93 64 85 71 81 70 C78 69 73 59 74 48 C75 39 80 34 80 34 Z" fill="#1B382B" />
+    <path d="M101 56 C101 56 109 64 107 77 C105 87 97 91 93 88 C90 85 91 74 96 66 C100 59 101 56 101 56 Z" fill="#38A169" />
+    <path d="M102 96 C102 96 111 103 109 116 C107 125 99 128 95 125 C92 122 93 112 98 105 C101 99 102 96 102 96 Z" fill="#38A169" />
   </g>
   
   <!-- Brand Wordmark: KOMOREBI in Funky Bird -->

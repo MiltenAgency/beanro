@@ -16,7 +16,7 @@ export function MenuTabs() {
 
   return (
     <div>
-      <div role="tablist" aria-label="Drink categories" className="flex flex-wrap gap-2">
+      <div role="tablist" aria-label="Drink categories" className="flex flex-wrap gap-3">
         {menu.map((c) => {
           const selected = c.id === active;
           return (
@@ -27,10 +27,15 @@ export function MenuTabs() {
               aria-selected={selected}
               onClick={() => setActive(c.id)}
               className={clsx(
-                "rounded-full px-4 py-[10px] font-body text-[16px] leading-[27.2px] font-medium uppercase transition-colors",
-                selected ? "bg-brown-soft text-peach" : "bg-sand text-brown-soft hover:bg-peach",
+                "relative flex items-center gap-2.5 rounded-full px-5 py-2.5 font-body text-[15px] font-semibold uppercase tracking-wider transition-all duration-200",
+                selected
+                  ? "bg-brown text-cream shadow-md ring-2 ring-orange/60"
+                  : "border border-brown/15 bg-sand text-brown hover:border-orange/40 hover:bg-cream",
               )}
             >
+              {selected && (
+                <span className="h-2 w-2 rounded-full bg-orange" aria-hidden="true" />
+              )}
               {c.label}
             </button>
           );
