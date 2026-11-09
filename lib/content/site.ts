@@ -39,12 +39,12 @@ export const closingCta = {
   body: "Every day deserves a quiet pause — an invitation to slow down, breathe, and experience ceremonial Japanese tea prepared with profound mindfulness.",
   cta: { label: "Reserve A Tatami Table", href: "/reservation" },
   leftImage: {
-    src: "/assets/img/matcha/matcha-latte-glass.png",
-    alt: "Chilled iced matcha latte with organic cream",
+    src: "/assets/img/matcha/hero-iced-matcha.jpg",
+    alt: "Chilled iced ceremonial matcha latte with organic cream",
   },
   rightImage: {
-    src: "/assets/img/matcha/dripping-chasen.png",
-    alt: "Handcrafted ceremonial matcha bamboo whisk",
+    src: "/assets/img/matcha/koicha-bowl.jpg",
+    alt: "Handcrafted ceremonial matcha chawan bowl",
   },
 };
 
