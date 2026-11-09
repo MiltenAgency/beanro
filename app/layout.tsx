@@ -5,6 +5,7 @@ import { site } from "@/lib/content/site";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { LenisProvider } from "@/components/LenisProvider";
+import { StaggeredColumnsPreloader } from "@/components/StaggeredColumnsPreloader";
 
 export const metadata: Metadata = {
   title: { default: site.title, template: `%s — ${site.name}` },
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="min-h-screen bg-page text-brown antialiased">
         <LenisProvider />
+        <StaggeredColumnsPreloader />
         <Navbar />
         <main>{children}</main>
         <Footer />
