@@ -79,9 +79,9 @@ export function StaggeredColumnsPreloader({
       {isLoading && (
         <div
           aria-hidden="true"
-          className={`fixed inset-0 z-[99999] pointer-events-auto overflow-hidden bg-[#ECE7D2] ${className}`}
+          className={`fixed inset-0 z-[99999] pointer-events-auto overflow-hidden bg-[#1B382B] ${className}`}
         >
-          {/* Staggered Vertical Columns in Japanese Washi Sand */}
+          {/* Staggered Vertical Columns in Brand Deep Forest Matcha */}
           <div className="absolute inset-0 flex h-full w-full">
             {Array.from({ length: columnsCount }).map((_, i) => {
               const distanceFromMiddle = Math.abs(i - middleIndex);
@@ -97,7 +97,7 @@ export function StaggeredColumnsPreloader({
                     delay: delay,
                     ease: [0.76, 0, 0.24, 1],
                   }}
-                  className="relative h-full flex-1 bg-[#ECE7D2] border-r border-[#1B382B]/10 last:border-r-0"
+                  className="relative h-full flex-1 bg-[#1B382B] border-r border-white/10 last:border-r-0"
                 />
               );
             })}
@@ -116,7 +116,7 @@ export function StaggeredColumnsPreloader({
             className="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none px-4"
           >
             {/* Tree Emblem with Vector Mask and Living Matcha Cuts */}
-            <div className="relative w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px] drop-shadow-[0_8px_24px_rgba(27,56,43,0.18)]">
+            <div className="relative w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px] drop-shadow-[0_12px_36px_rgba(0,0,0,0.5)]">
               <svg
                 viewBox="0 0 380 380"
                 className="w-full h-full select-none"
@@ -142,6 +142,16 @@ export function StaggeredColumnsPreloader({
                     />
                   </mask>
                 </defs>
+                {/* Subtle luminous white silhouette backlight for tree branches on dark background */}
+                <image
+                  href="/assets/img/tree-mark-white.png"
+                  x="0"
+                  y="0"
+                  width="380"
+                  height="380"
+                  preserveAspectRatio="xMidYMid meet"
+                  opacity={0.18}
+                />
                 <g mask="url(#tree-matcha-mask)">
                   {MATCHA_FRAMES.map((src, index) => (
                     <image
@@ -161,17 +171,17 @@ export function StaggeredColumnsPreloader({
 
             {/* Brand Wordmark and Japanese Kanji */}
             <div className="mt-5 flex flex-col items-center text-center">
-              <span className="font-display text-[26px] sm:text-[32px] md:text-[36px] font-bold leading-none tracking-[0.06em] text-brown">
+              <span className="font-display text-[26px] sm:text-[32px] md:text-[36px] font-bold leading-none tracking-[0.06em] text-[#F5FBED] drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
                 KOMOREBI
               </span>
               <div className="mt-2 flex items-center gap-2">
-                <span className="font-body text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-orange uppercase">
+                <span className="font-body text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#EEC585] uppercase">
                   TEAHOUSE
                 </span>
-                <span className="text-brown/40 text-[10px] sm:text-[11px] font-medium">
+                <span className="text-white/40 text-[10px] sm:text-[11px] font-medium">
                   ·
                 </span>
-                <span className="font-body text-[10px] sm:text-[11px] font-semibold tracking-[0.18em] text-brown/75">
+                <span className="font-body text-[10px] sm:text-[11px] font-semibold tracking-[0.18em] text-[#F5FBED]/85">
                   木漏れ日
                 </span>
               </div>
