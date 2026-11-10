@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useReducedMotionSafe } from "@/components/motion/useReducedMotionSafe";
 
@@ -16,12 +15,13 @@ interface StaggeredColumnsPreloaderProps {
 export function StaggeredColumnsPreloader({
   columnsCount = 5,
   onComplete,
-  duration = 1100,
+  duration = 2400,
   className = "",
   oncePerSession = process.env.NODE_ENV !== "development",
 }: StaggeredColumnsPreloaderProps) {
   const reduceMotion = useReducedMotionSafe();
   const [isLoading, setIsLoading] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const isBot =
@@ -50,6 +50,14 @@ export function StaggeredColumnsPreloader({
     return () => clearTimeout(timer);
   }, [duration, onComplete, reduceMotion, oncePerSession]);
 
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        // Autoplay policy fallback: poster remains visible
+      });
+    }
+  }, []);
+
   if (reduceMotion) return null;
 
   const middleIndex = Math.floor(columnsCount / 2);
@@ -59,15 +67,13 @@ export function StaggeredColumnsPreloader({
       {isLoading && (
         <div
           aria-hidden="true"
-          className={`fixed inset-0 z-[99999] pointer-events-auto overflow-hidden ${className}`}
+          className={`fixed inset-0 z-[99999] pointer-events-auto overflow-hidden bg-[#ECE7D2] ${className}`}
         >
-          {/* Staggered Vertical Columns in Brand Deep Matcha Color */}
-          <div className="flex h-full w-full">
+          {/* Staggered Vertical Columns in Japanese Washi Sand */}
+          <div className="absolute inset-0 flex h-full w-full">
             {Array.from({ length: columnsCount }).map((_, i) => {
-              const isMiddle = i === middleIndex;
-              // Calculate delay so outer columns exit first, and the middle column exits LAST
               const distanceFromMiddle = Math.abs(i - middleIndex);
-              const delay = (middleIndex - distanceFromMiddle) * 0.1;
+              const delay = (middleIndex - distanceFromMiddle) * 0.08;
 
               return (
                 <motion.div
@@ -75,29 +81,42 @@ export function StaggeredColumnsPreloader({
                   initial={{ y: 0 }}
                   exit={{ y: "-100%" }}
                   transition={{
-                    duration: 0.6,
+                    duration: 0.7,
                     delay: delay,
                     ease: [0.76, 0, 0.24, 1],
                   }}
-                  className="relative h-full flex-1 bg-[#1B382B] border-r border-white/10 last:border-r-0 flex items-center justify-center px-2"
-                >
-                  {/* White Brand Logo attached to the middle column */}
-                  {isMiddle && (
-                    <div className="flex flex-col items-center justify-center text-center px-2 w-full max-w-[320px]">
-                      <Image
-                        src="/komorebi-white.svg"
-                        alt="Komorebi Teahouse"
-                        width={250}
-                        height={40}
-                        priority
-                        className="w-48 sm:w-60 md:w-72 h-auto max-w-[95%] object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.35)]"
-                      />
-                    </div>
-                  )}
-                </motion.div>
+                  className="relative h-full flex-1 bg-[#ECE7D2] border-r border-[#1B382B]/10 last:border-r-0"
+                />
               );
             })}
           </div>
+
+          {/* Centered Matcha Chawan Bowl Animation from User Video */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ y: "-100%", opacity: 0 }}
+            transition={{
+              duration: 0.65,
+              delay: middleIndex * 0.08,
+              ease: [0.76, 0, 0.24, 1],
+            }}
+            className="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none px-4"
+          >
+            <div className="relative w-[300px] sm:w-[380px] md:w-[440px] max-w-[85vw] aspect-[440/340] overflow-hidden">
+              <video
+                ref={videoRef}
+                src="/assets/video/preloader-bowl.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                poster="/assets/img/preloader-bowl-poster.webp"
+                className="w-full h-full object-contain block"
+              />
+            </div>
+          </motion.div>
         </div>
       )}
     </AnimatePresence>
