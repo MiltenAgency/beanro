@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useReducedMotionSafe } from "@/components/motion/useReducedMotionSafe";
 
@@ -12,16 +12,36 @@ interface StaggeredColumnsPreloaderProps {
   oncePerSession?: boolean;
 }
 
+const MATCHA_FRAMES = [
+  "/assets/img/matcha/tree-frame-1.webp",
+  "/assets/img/matcha/tree-frame-2.webp",
+  "/assets/img/matcha/tree-frame-3.webp",
+  "/assets/img/matcha/tree-frame-4.webp",
+  "/assets/img/matcha/tree-frame-5.webp",
+  "/assets/img/matcha/tree-frame-6.webp",
+];
+
 export function StaggeredColumnsPreloader({
   columnsCount = 5,
   onComplete,
-  duration = 2400,
+  duration = 2600,
   className = "",
   oncePerSession = process.env.NODE_ENV !== "development",
 }: StaggeredColumnsPreloaderProps) {
   const reduceMotion = useReducedMotionSafe();
   const [isLoading, setIsLoading] = useState(true);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const [activeFrame, setActiveFrame] = useState(0);
+
+  // Rapid stop-motion cutting rhythm (~220ms per frame, matching the reference video style)
+  useEffect(() => {
+    if (reduceMotion) return;
+
+    const interval = setInterval(() => {
+      setActiveFrame((prev) => (prev + 1) % MATCHA_FRAMES.length);
+    }, 220);
+
+    return () => clearInterval(interval);
+  }, [reduceMotion]);
 
   useEffect(() => {
     const isBot =
@@ -49,14 +69,6 @@ export function StaggeredColumnsPreloader({
 
     return () => clearTimeout(timer);
   }, [duration, onComplete, reduceMotion, oncePerSession]);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {
-        // Autoplay policy fallback: poster remains visible
-      });
-    }
-  }, []);
 
   if (reduceMotion) return null;
 
@@ -91,9 +103,9 @@ export function StaggeredColumnsPreloader({
             })}
           </div>
 
-          {/* Centered Matcha Chawan Bowl Animation from User Video */}
+          {/* Centered Brand Logo: Tree Silhouette Masked with Rapidly Changing Matcha Textures */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
+            initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ y: "-100%", opacity: 0 }}
             transition={{
@@ -103,18 +115,66 @@ export function StaggeredColumnsPreloader({
             }}
             className="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none px-4"
           >
-            <div className="relative w-[300px] sm:w-[380px] md:w-[440px] max-w-[85vw] aspect-[440/340] overflow-hidden">
-              <video
-                ref={videoRef}
-                src="/assets/video/preloader-bowl.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-                poster="/assets/img/preloader-bowl-poster.webp"
-                className="w-full h-full object-contain block"
-              />
+            {/* Tree Emblem with Vector Mask and Living Matcha Cuts */}
+            <div className="relative w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px] drop-shadow-[0_8px_24px_rgba(27,56,43,0.18)]">
+              <svg
+                viewBox="0 0 380 380"
+                className="w-full h-full select-none"
+                aria-label="Komorebi Botanical Tree Emblem"
+                role="img"
+              >
+                <defs>
+                  <mask
+                    id="tree-matcha-mask"
+                    maskUnits="userSpaceOnUse"
+                    x="0"
+                    y="0"
+                    width="380"
+                    height="380"
+                  >
+                    <image
+                      href="/assets/img/tree-mark-white.png"
+                      x="0"
+                      y="0"
+                      width="380"
+                      height="380"
+                      preserveAspectRatio="xMidYMid meet"
+                    />
+                  </mask>
+                </defs>
+                <g mask="url(#tree-matcha-mask)">
+                  {MATCHA_FRAMES.map((src, index) => (
+                    <image
+                      key={src}
+                      href={src}
+                      x="0"
+                      y="0"
+                      width="380"
+                      height="380"
+                      preserveAspectRatio="xMidYMid slice"
+                      opacity={index === activeFrame ? 1 : 0}
+                    />
+                  ))}
+                </g>
+              </svg>
+            </div>
+
+            {/* Brand Wordmark and Japanese Kanji */}
+            <div className="mt-5 flex flex-col items-center text-center">
+              <span className="font-display text-[26px] sm:text-[32px] md:text-[36px] font-bold leading-none tracking-[0.06em] text-brown">
+                KOMOREBI
+              </span>
+              <div className="mt-2 flex items-center gap-2">
+                <span className="font-body text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-orange uppercase">
+                  TEAHOUSE
+                </span>
+                <span className="text-brown/40 text-[10px] sm:text-[11px] font-medium">
+                  ·
+                </span>
+                <span className="font-body text-[10px] sm:text-[11px] font-semibold tracking-[0.18em] text-brown/75">
+                  木漏れ日
+                </span>
+              </div>
             </div>
           </motion.div>
         </div>
