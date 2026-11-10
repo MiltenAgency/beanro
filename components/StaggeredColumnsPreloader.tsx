@@ -24,7 +24,7 @@ const MATCHA_FRAMES = [
 export function StaggeredColumnsPreloader({
   columnsCount = 5,
   onComplete,
-  duration = 2600,
+  duration = 2200,
   className = "",
   oncePerSession = process.env.NODE_ENV !== "development",
 }: StaggeredColumnsPreloaderProps) {
@@ -79,13 +79,15 @@ export function StaggeredColumnsPreloader({
       {isLoading && (
         <div
           aria-hidden="true"
-          className={`fixed inset-0 z-[99999] pointer-events-auto overflow-hidden bg-[#1B382B] ${className}`}
+          className={`fixed inset-0 z-[99999] pointer-events-auto overflow-hidden ${className}`}
         >
-          {/* Staggered Vertical Columns in Brand Deep Forest Matcha */}
-          <div className="absolute inset-0 flex h-full w-full">
+          {/* Staggered Vertical Columns in Brand Deep Forest Matcha (milten behavior) */}
+          <div className="flex h-full w-full">
             {Array.from({ length: columnsCount }).map((_, i) => {
+              const isMiddle = i === middleIndex;
+              // Calculate delay so outer columns exit first, and the middle column exits LAST
               const distanceFromMiddle = Math.abs(i - middleIndex);
-              const delay = (middleIndex - distanceFromMiddle) * 0.08;
+              const delay = (middleIndex - distanceFromMiddle) * 0.1;
 
               return (
                 <motion.div
@@ -93,100 +95,94 @@ export function StaggeredColumnsPreloader({
                   initial={{ y: 0 }}
                   exit={{ y: "-100%" }}
                   transition={{
-                    duration: 0.7,
+                    duration: 0.6,
                     delay: delay,
                     ease: [0.76, 0, 0.24, 1],
                   }}
-                  className="relative h-full flex-1 bg-[#1B382B] border-r border-white/10 last:border-r-0"
-                />
+                  className={`relative h-full flex-1 bg-[#1B382B] border-r border-white/10 last:border-r-0 flex items-center justify-center px-2 ${
+                    isMiddle ? "z-10 overflow-visible" : "z-0"
+                  }`}
+                >
+                  {/* Brand Logo attached directly inside the middle column (milten behavior) */}
+                  {isMiddle && (
+                    <div className="flex flex-col items-center justify-center text-center select-none pointer-events-none w-[144px] sm:w-[176px] md:w-[208px] shrink-0">
+                      {/* Tree Emblem with Vector Mask and Living Matcha Cuts (20% smaller) */}
+                      <div className="relative w-[144px] h-[144px] sm:w-[176px] sm:h-[176px] md:w-[208px] md:h-[208px] drop-shadow-[0_12px_36px_rgba(0,0,0,0.5)]">
+                        <svg
+                          viewBox="0 0 380 380"
+                          className="w-full h-full select-none"
+                          aria-label="Komorebi Botanical Tree Emblem"
+                          role="img"
+                        >
+                          <defs>
+                            <mask
+                              id="tree-matcha-mask"
+                              maskUnits="userSpaceOnUse"
+                              x="0"
+                              y="0"
+                              width="380"
+                              height="380"
+                            >
+                              <image
+                                href="/assets/img/tree-mark-white.png"
+                                x="0"
+                                y="0"
+                                width="380"
+                                height="380"
+                                preserveAspectRatio="xMidYMid meet"
+                              />
+                            </mask>
+                          </defs>
+                          {/* Subtle luminous white silhouette backlight for tree branches on dark background */}
+                          <image
+                            href="/assets/img/tree-mark-white.png"
+                            x="0"
+                            y="0"
+                            width="380"
+                            height="380"
+                            preserveAspectRatio="xMidYMid meet"
+                            opacity={0.18}
+                          />
+                          <g mask="url(#tree-matcha-mask)">
+                            {MATCHA_FRAMES.map((src, index) => (
+                              <image
+                                key={src}
+                                href={src}
+                                x="0"
+                                y="0"
+                                width="380"
+                                height="380"
+                                preserveAspectRatio="xMidYMid slice"
+                                opacity={index === activeFrame ? 1 : 0}
+                              />
+                            ))}
+                          </g>
+                        </svg>
+                      </div>
+
+                      {/* Brand Wordmark and Japanese Kanji (20% smaller) */}
+                      <div className="mt-3 sm:mt-4 flex flex-col items-center text-center">
+                        <span className="font-display text-[21px] sm:text-[26px] md:text-[29px] font-bold leading-none tracking-[0.06em] text-[#F5FBED] drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
+                          KOMOREBI
+                        </span>
+                        <div className="mt-1.5 flex items-center gap-1.5">
+                          <span className="font-body text-[8px] sm:text-[9px] font-bold tracking-[0.24em] text-[#EEC585] uppercase">
+                            TEAHOUSE
+                          </span>
+                          <span className="text-white/40 text-[8px] sm:text-[9px] font-medium">
+                            ·
+                          </span>
+                          <span className="font-body text-[8px] sm:text-[9px] font-semibold tracking-[0.18em] text-[#F5FBED]/85">
+                            木漏れ日
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </motion.div>
               );
             })}
           </div>
-
-          {/* Centered Brand Logo: Tree Silhouette Masked with Rapidly Changing Matcha Textures */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.94 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ y: "-100%", opacity: 0 }}
-            transition={{
-              duration: 0.65,
-              delay: middleIndex * 0.08,
-              ease: [0.76, 0, 0.24, 1],
-            }}
-            className="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none px-4"
-          >
-            {/* Tree Emblem with Vector Mask and Living Matcha Cuts */}
-            <div className="relative w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px] drop-shadow-[0_12px_36px_rgba(0,0,0,0.5)]">
-              <svg
-                viewBox="0 0 380 380"
-                className="w-full h-full select-none"
-                aria-label="Komorebi Botanical Tree Emblem"
-                role="img"
-              >
-                <defs>
-                  <mask
-                    id="tree-matcha-mask"
-                    maskUnits="userSpaceOnUse"
-                    x="0"
-                    y="0"
-                    width="380"
-                    height="380"
-                  >
-                    <image
-                      href="/assets/img/tree-mark-white.png"
-                      x="0"
-                      y="0"
-                      width="380"
-                      height="380"
-                      preserveAspectRatio="xMidYMid meet"
-                    />
-                  </mask>
-                </defs>
-                {/* Subtle luminous white silhouette backlight for tree branches on dark background */}
-                <image
-                  href="/assets/img/tree-mark-white.png"
-                  x="0"
-                  y="0"
-                  width="380"
-                  height="380"
-                  preserveAspectRatio="xMidYMid meet"
-                  opacity={0.18}
-                />
-                <g mask="url(#tree-matcha-mask)">
-                  {MATCHA_FRAMES.map((src, index) => (
-                    <image
-                      key={src}
-                      href={src}
-                      x="0"
-                      y="0"
-                      width="380"
-                      height="380"
-                      preserveAspectRatio="xMidYMid slice"
-                      opacity={index === activeFrame ? 1 : 0}
-                    />
-                  ))}
-                </g>
-              </svg>
-            </div>
-
-            {/* Brand Wordmark and Japanese Kanji */}
-            <div className="mt-5 flex flex-col items-center text-center">
-              <span className="font-display text-[26px] sm:text-[32px] md:text-[36px] font-bold leading-none tracking-[0.06em] text-[#F5FBED] drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
-                KOMOREBI
-              </span>
-              <div className="mt-2 flex items-center gap-2">
-                <span className="font-body text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#EEC585] uppercase">
-                  TEAHOUSE
-                </span>
-                <span className="text-white/40 text-[10px] sm:text-[11px] font-medium">
-                  ·
-                </span>
-                <span className="font-body text-[10px] sm:text-[11px] font-semibold tracking-[0.18em] text-[#F5FBED]/85">
-                  木漏れ日
-                </span>
-              </div>
-            </div>
-          </motion.div>
         </div>
       )}
     </AnimatePresence>
