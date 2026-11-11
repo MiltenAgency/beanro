@@ -6,6 +6,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { LenisProvider } from "@/components/LenisProvider";
 import { StaggeredColumnsPreloader } from "@/components/StaggeredColumnsPreloader";
+import { AgentationProvider } from "@/components/AgentationProvider";
 
 export const metadata: Metadata = {
   title: { default: site.title, template: `%s — ${site.name}` },
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <AgentationProvider />
       </body>
     </html>
   );

@@ -1,45 +1,16 @@
 /** Home page copy and imagery for Komorebi Teahouse. */
 
 export const hero = {
-  bgImage: "/assets/img/matcha/tea-farm-spirals.jpg",
-  bgAlt: "Sculptural geometric green tea terraces curving in tranquil hypnotic waves across an artisan Uji tea plantation",
-  crest: "/assets/img/tree-mark-white.png",
-  kanji: "木漏れ日",
-  eyebrow: "宇治単一農園 • SINGLE-ESTATE UJI TENCHA",
-  title: "KOMOREBI",
-  subtitleLeft: "PURELY",
-  subtitleRight: "JAPANESE",
-  tagline: "Artisan Ceremonial Matcha Sanctuary",
-  subhead:
-    "Honoring centuries of Uji tea heritage with single-estate shade-grown tencha, carved Takayama bamboo chasen whisks, and tranquil tatami tea pavilions.",
-  cta: {
-    primary: { label: "Reserve A Table", href: "/reservation" },
-    secondary: { label: "Explore Tea Menu", href: "/menu" },
+  lines: ["Mindful Moments", "Whisked To Life"],
+  splash: {
+    src: "/assets/img/matcha/matcha-splash.png",
+    alt: "Vibrant ceremonial green matcha liquid splash",
   },
-  provenance: [
-    { label: "Provenance", value: "Uji, Kyoto Prefecture" },
-    { label: "Heritage", value: "300+ Years Heritage Farm" },
-    { label: "Harvest", value: "First Flush (Shincha 2026)" },
-    { label: "Ritual", value: "100-Prong Takayama Chasen" },
-  ],
-  lines: ["Mindful Moments,", "Whisked To Life"],
-  card: {
-    badge: "Ceremonial Grade Usucha",
-    origin: "Kyoto Heritage Lot 04",
-    title: "Uji Horizon Koicha",
-    cultivar: "Okumidori & Samidori",
-    image: "/assets/img/matcha/koicha-bowl.jpg",
-    alt: "Hand-whisked ceremonial matcha with vibrant emerald micro-froth in a handcrafted ceramic chawan",
-    chasenImage: "/assets/img/matcha/matcha-whisk.jpg",
-    chasenAlt: "Artisan Takayama bamboo chasen whisk",
-    stats: [
-      { label: "Shade Period", value: "21 Days" },
-      { label: "Water Temp", value: "78°C" },
-      { label: "Umami Profile", value: "Deep Sweetness" },
-    ],
+  cup: {
+    src: "/assets/img/matcha/iced-matcha-cutout.webp",
+    png: "/assets/img/matcha/iced-matcha-cutout.png",
+    alt: "Creamy iced ceremonial matcha latte with marbled milk spread and crystal ice cubes",
   },
-  splash: { src: "/assets/img/matcha/matcha-splash.png", alt: "Vibrant ceremonial green matcha liquid splash" },
-  cup: { src: "/assets/img/matcha/hero-iced-matcha.jpg", alt: "Chilled ceremonial matcha latte with bamboo straw" },
 };
 
 /**
